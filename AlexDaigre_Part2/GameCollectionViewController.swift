@@ -10,8 +10,9 @@ import UIKit
 
 class GameCollectionViewController: UIViewController, GameReciverDelegate {
     
-    @IBAction func browseGameButton(_ sender: Any) {
-        
+    @IBAction func browseGames(_ sender: Any) {
+        print("button Pressed")
+        performSegue(withIdentifier: "goToFilters", sender: self)
     }
     
     override func viewDidLoad() {

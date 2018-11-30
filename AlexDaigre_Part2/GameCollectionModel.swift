@@ -6,7 +6,7 @@
 //  Copyright © 2018 Alexander Daigre. All rights reserved.
 //
 
-enum Condition {
+enum Condition: CaseIterable {
     case newSIB
     case likeNew
     case good
@@ -15,7 +15,7 @@ enum Condition {
     case terrible
 }
 
-enum Completeness {
+enum Completeness: CaseIterable, CustomStringConvertible {
     case cib
     case gameAndManual
     case boxAndManual
@@ -24,6 +24,19 @@ enum Completeness {
     case cartrigeDiskOnly
     case manualOnly
     case boxOnly
+    
+    var description : String {
+        switch self {
+            case .cib: return "Complete in box"
+            case .gameAndManual: return "Game and manual"
+            case .boxAndManual: return "Box and manual"
+            case .boxAndGame: return "box and game"
+            case .jewelCaseGameAndInserts: return "Jewel case game and inserts"
+            case .cartrigeDiskOnly: return "Cartrige/disk only"
+            case .manualOnly: return "Manual only"
+            case .boxOnly: return "Box only"
+        }
+    }
 }
 
 struct Game {
