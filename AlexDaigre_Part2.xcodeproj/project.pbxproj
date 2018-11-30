@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		FA5EF92121B1C377008987DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EF92021B1C377008987DD /* AppDelegate.swift */; };
-		FA5EF92321B1C377008987DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EF92221B1C377008987DD /* ViewController.swift */; };
+		FA5EF92321B1C377008987DD /* GameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EF92221B1C377008987DD /* GameCollectionViewController.swift */; };
 		FA5EF92621B1C377008987DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5EF92421B1C377008987DD /* Main.storyboard */; };
 		FA5EF92921B1C377008987DD /* AlexDaigre_Part2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA5EF92721B1C377008987DD /* AlexDaigre_Part2.xcdatamodeld */; };
 		FA5EF92B21B1C377008987DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5EF92A21B1C377008987DD /* Assets.xcassets */; };
 		FA5EF92E21B1C377008987DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5EF92C21B1C377008987DD /* LaunchScreen.storyboard */; };
 		FA5EF93921B1C377008987DD /* AlexDaigre_Part2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EF93821B1C377008987DD /* AlexDaigre_Part2Tests.swift */; };
 		FA5EF94421B1C377008987DD /* AlexDaigre_Part2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EF94321B1C377008987DD /* AlexDaigre_Part2UITests.swift */; };
+		FA5EF95221B1C4A5008987DD /* GameCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EF95121B1C4A5008987DD /* GameCollectionModel.swift */; };
+		FA5EF95421B1DD12008987DD /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EF95321B1DD12008987DD /* FiltersViewController.swift */; };
+		FA5EF95621B1DD66008987DD /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EF95521B1DD66008987DD /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,7 @@
 /* Begin PBXFileReference section */
 		FA5EF91D21B1C377008987DD /* AlexDaigre_Part2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlexDaigre_Part2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5EF92021B1C377008987DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA5EF92221B1C377008987DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA5EF92221B1C377008987DD /* GameCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewController.swift; sourceTree = "<group>"; };
 		FA5EF92521B1C377008987DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA5EF92821B1C377008987DD /* AlexDaigre_Part2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AlexDaigre_Part2.xcdatamodel; sourceTree = "<group>"; };
 		FA5EF92A21B1C377008987DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		FA5EF93F21B1C377008987DD /* AlexDaigre_Part2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlexDaigre_Part2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5EF94321B1C377008987DD /* AlexDaigre_Part2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlexDaigre_Part2UITests.swift; sourceTree = "<group>"; };
 		FA5EF94521B1C377008987DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA5EF95121B1C4A5008987DD /* GameCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionModel.swift; sourceTree = "<group>"; };
+		FA5EF95321B1DD12008987DD /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		FA5EF95521B1DD66008987DD /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				FA5EF92021B1C377008987DD /* AppDelegate.swift */,
-				FA5EF92221B1C377008987DD /* ViewController.swift */,
+				FA5EF92221B1C377008987DD /* GameCollectionViewController.swift */,
 				FA5EF92421B1C377008987DD /* Main.storyboard */,
 				FA5EF92A21B1C377008987DD /* Assets.xcassets */,
 				FA5EF92C21B1C377008987DD /* LaunchScreen.storyboard */,
 				FA5EF92F21B1C377008987DD /* Info.plist */,
 				FA5EF92721B1C377008987DD /* AlexDaigre_Part2.xcdatamodeld */,
+				FA5EF95121B1C4A5008987DD /* GameCollectionModel.swift */,
+				FA5EF95321B1DD12008987DD /* FiltersViewController.swift */,
+				FA5EF95521B1DD66008987DD /* ResultsViewController.swift */,
 			);
 			path = AlexDaigre_Part2;
 			sourceTree = "<group>";
@@ -260,8 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5EF92921B1C377008987DD /* AlexDaigre_Part2.xcdatamodeld in Sources */,
-				FA5EF92321B1C377008987DD /* ViewController.swift in Sources */,
+				FA5EF95221B1C4A5008987DD /* GameCollectionModel.swift in Sources */,
+				FA5EF92321B1C377008987DD /* GameCollectionViewController.swift in Sources */,
 				FA5EF92121B1C377008987DD /* AppDelegate.swift in Sources */,
+				FA5EF95421B1DD12008987DD /* FiltersViewController.swift in Sources */,
+				FA5EF95621B1DD66008987DD /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
