@@ -23,6 +23,7 @@ class FiltersViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         filtersTable.dataSource = self
+        filtersTable.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,11 +47,10 @@ extension FiltersViewController: UITableViewDataSource {
         cell.textLabel?.text = Completeness.allCases[indexPath.row].description
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath
-        indexPath: IndexPath){
-        print("Clicked")
-        print("section: \(indexPath.section)")
-        print("row: \(indexPath.row)")
+}
+
+extension FiltersViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("clicked")
     }
 }
