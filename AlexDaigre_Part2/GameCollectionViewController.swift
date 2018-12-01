@@ -21,7 +21,7 @@ class GameCollectionViewController: UIViewController, GameReciverDelegate {
     }
     
     func reciveGame(game: Game){
-        
+        print(game)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -51,28 +51,51 @@
             </objects>
             <point key="canvasLocation" x="353" y="-147"/>
         </scene>
-        <!--View Controller-->
+        <!--Filters View Controller-->
         <scene sceneID="FEz-D9-qVi">
             <objects>
-                <viewController id="PQC-3v-90z" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wez-xg-cWw">
+                <viewController id="PQC-3v-90z" customClass="FiltersViewController" customModule="AlexDaigre_Part2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wez-xg-cWw" customClass="F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNn-zl-pMg">
+                                <rect key="frame" x="164" y="239" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="viewResults:" destination="PQC-3v-90z" eventType="touchUpInside" id="4rq-Xx-AOT"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PCq-IO-x8f"/>
                     </view>
+                    <connections>
+                        <segue destination="pYm-YF-SFe" kind="show" identifier="goToResults" id="ClH-Cr-YQu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fkx-wq-T8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1242" y="-147"/>
+            <point key="canvasLocation" x="1240.8" y="-147.07646176911544"/>
         </scene>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="whz-fi-UNs">
             <objects>
-                <viewController id="pYm-YF-SFe" sceneMemberID="viewController">
+                <viewController id="pYm-YF-SFe" customClass="ResultsViewController" customModule="AlexDaigre_Part2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zm9-sP-Mwi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2v-hL-0uN">
+                                <rect key="frame" x="133" y="204" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="selectGame:" destination="pYm-YF-SFe" eventType="touchUpInside" id="Gy6-Bj-EXm"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FWV-8K-5D3"/>
                     </view>
