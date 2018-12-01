@@ -11,7 +11,6 @@ import UIKit
 class FiltersViewController: UIViewController {
     
     var gameCollection: [Game] = games
-    var filters: [String] = []
     weak var delegate: GameReciverDelegate?
     @IBOutlet weak var filtersTable: UITableView!
     
@@ -23,6 +22,7 @@ class FiltersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        filtersTable.dataSource = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,30 +33,24 @@ class FiltersViewController: UIViewController {
             vc?.delegate = delegate
         }
     }
-    
-    func loadDataFromModel(){
-        if let UIViewController = self.UIViewController as? FiltersViewController {
-            
-        }
-    }
 }
 
-extension ConditionViewController: UITableViewDataSource {
+extension FiltersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let tabBarController = self.tabBarController as? CustomTabController {
-            return tabBarController.currentCat.getMarkedPlacesCount()
-        }
-        return 0
+        return Completeness.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath)
         
-        if let tabBarController = self.tabBarController as? CustomTabController {
-            cell.textLabel?.text = tabBarController.currentCat.getMarkedPlaces(atIndex: indexPath.row)
-            return cell
-        }
-        
+        cell.textLabel?.text = Completeness.allCases[indexPath.row].description
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath
+        indexPath: IndexPath){
+        print("Clicked")
+        print("section: \(indexPath.section)")
+        print("row: \(indexPath.row)")
     }
 }
