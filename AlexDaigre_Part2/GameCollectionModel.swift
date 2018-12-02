@@ -6,13 +6,24 @@
 //  Copyright © 2018 Alexander Daigre. All rights reserved.
 //
 
-enum Condition: CaseIterable {
+enum Condition: CaseIterable, CustomStringConvertible {
     case newSIB
     case likeNew
     case good
     case fair
     case poor
     case terrible
+    
+    var description : String {
+        switch self {
+        case .newSIB: return "Sealed In Box"
+        case .likeNew: return "Like New"
+        case .good: return "Good"
+        case .fair: return "Fair"
+        case .poor: return "Poor"
+        case .terrible: return "Terrible"
+        }
+    }
 }
 
 enum Completeness: CaseIterable, CustomStringConvertible {

@@ -10,6 +10,12 @@ import UIKit
 
 class GameCollectionViewController: UIViewController, GameReciverDelegate {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var systemLabel: UILabel!
+    @IBOutlet weak var conditionLabel: UILabel!
+    @IBOutlet weak var completenessLabel: UILabel!
+    @IBOutlet weak var notesLabel: UILabel!
+    
     @IBAction func browseGames(_ sender: Any) {
         print("button Pressed")
         performSegue(withIdentifier: "goToFilters", sender: self)
@@ -22,6 +28,11 @@ class GameCollectionViewController: UIViewController, GameReciverDelegate {
     
     func reciveGame(game: Game){
         print(game)
+        titleLabel.text = game.name
+        systemLabel.text = game.system
+        conditionLabel.text = game.condition.description
+        completenessLabel.text = game.completeness.description
+        notesLabel.text = game.notes
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
