@@ -12,16 +12,33 @@ class ResultsViewController: UIViewController {
     
     var filteredGameCollection: [Game] = []
     weak var delegate: GameReciverDelegate?
-    
-    @IBAction func selectGame(_ sender: Any?){
-        print(self.filteredGameCollection)
-        delegate?.reciveGame(game: filteredGameCollection[0])
-    }
+    @IBOutlet weak var resultsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print(filteredGameCollection)
+        resultsTable.dataSource = self
+        resultsTable.delegate = self
+    }
+}
+
+extension ResultsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredGameCollection.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath)
+        
+        cell.textLabel?.text = filteredGameCollection[indexPath.row].name
+        return cell
+    }
+}
+
+extension ResultsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.reciveGame(game: filteredGameCollection[indexPath.row])
+//        self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
+        navigationController?.popToRootViewController(animated: true)
+    }
 }

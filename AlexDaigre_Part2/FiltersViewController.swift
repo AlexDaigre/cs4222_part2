@@ -10,14 +10,9 @@ import UIKit
 
 class FiltersViewController: UIViewController {
     
-    var gameCollection: [Game] = games
+    var gameCollection: [Game] = []
     weak var delegate: GameReciverDelegate?
     @IBOutlet weak var filtersTable: UITableView!
-    
-    @IBAction func viewResults(_ sender: Any) {
-        print(self.gameCollection)
-        performSegue(withIdentifier: "goToResults", sender: self)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +28,10 @@ class FiltersViewController: UIViewController {
             vc?.filteredGameCollection = gameCollection
             vc?.delegate = delegate
         }
+    }
+    
+    func generateFilterResults(index filter: Int){
+        gameCollection = games.filter { $0.completeness == Completeness.allCases[filter] }
     }
 }
 
@@ -51,6 +50,7 @@ extension FiltersViewController: UITableViewDataSource {
 
 extension FiltersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("clicked")
+        generateFilterResults(index: indexPath.row)
+        performSegue(withIdentifier: "goToResults", sender: self)
     }
 }
