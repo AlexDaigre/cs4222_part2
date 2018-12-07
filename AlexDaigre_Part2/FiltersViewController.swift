@@ -10,8 +10,9 @@ import UIKit
 
 class FiltersViewController: UIViewController {
     
-    var gameCollection: [Game] = []
     weak var delegate: GameReciverDelegate?
+    var filterSelected: Completeness = Completeness.cartrigeDiskOnly
+    var model: GameCollection? = nil
     @IBOutlet weak var filtersTable: UITableView!
     
     override func viewDidLoad() {
@@ -25,13 +26,14 @@ class FiltersViewController: UIViewController {
         if segue.destination is ResultsViewController
         {
             let vc = segue.destination as? ResultsViewController
-            vc?.filteredGameCollection = gameCollection
+            vc?.filterBy = filterSelected
             vc?.delegate = delegate
+            vc?.model = self.model!
         }
     }
     
-    func generateFilterResults(index filter: Int){
-        gameCollection = games.filter { $0.completeness == Completeness.allCases[filter] }
+    func generateFilter(index: Int){
+        filterSelected = Completeness.allCases[index]
     }
 }
 
@@ -50,7 +52,7 @@ extension FiltersViewController: UITableViewDataSource {
 
 extension FiltersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        generateFilterResults(index: indexPath.row)
+        generateFilter(index: indexPath.row)
         performSegue(withIdentifier: "goToResults", sender: self)
     }
 }

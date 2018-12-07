@@ -66,16 +66,27 @@ struct Game {
     }
 }
 
-var games: [Game] = [
-    Game(name: "Zone Of The Enders", system: "Playstation 2", condition: Condition.good, completeness: Completeness.cib),
-    Game(name: "Zone Of the Enders: The 2nd Runner", system: "Playstation 2", condition: Condition.good, completeness: Completeness.cib),
-    Game(name: "Pokemon Snap", system: "Nintendo 64", condition: Condition.good, completeness: Completeness.cartrigeDiskOnly, notes: "Two cartriges owned: similar condition"),
-    Game(name: "Pokemon Stadium", system: "Nintendo 64", condition: Condition.good, completeness: Completeness.cartrigeDiskOnly),
-    Game(name: "Riven", system: "PC", condition: Condition.fair, completeness: Completeness.cib),
-    Game(name: "Myst", system: "PC", condition: Condition.fair, completeness: Completeness.cib),
-    Game(name: "Pokemon Yellow", system: "Game Boy Color", condition: Condition.good, completeness: Completeness.cib),
-    Game(name: "Pokemon Red", system: "Game Boy", condition: Condition.good, completeness: Completeness.cartrigeDiskOnly),
-    Game(name: "Dragon Warrior", system: "Nintendo Entertainment System", condition: Condition.good, completeness: Completeness.gameAndManual, notes: "Own two cartriges, one is in poor condition. It was previously a blockbuster game and was glued shut"),
-    Game(name: "Super Mario Brothers / Duck Hunt", system: "Nintendo Entertainment System", condition: Condition.good, completeness: Completeness.cartrigeDiskOnly, notes: "Was bundled with the nes, did not come with its own box.")
-]
+struct GameCollection{
+    let games: [Game] = [
+        Game(name: "Zone Of The Enders", system: "Playstation 2", condition: Condition.good, completeness: Completeness.cib),
+        Game(name: "Zone Of the Enders: The 2nd Runner", system: "Playstation 2", condition: Condition.good, completeness: Completeness.cib),
+        Game(name: "Pokemon Snap", system: "Nintendo 64", condition: Condition.good, completeness: Completeness.cartrigeDiskOnly, notes: "Two cartriges owned: similar condition"),
+        Game(name: "Pokemon Stadium", system: "Nintendo 64", condition: Condition.good, completeness: Completeness.cartrigeDiskOnly),
+        Game(name: "Riven", system: "PC", condition: Condition.fair, completeness: Completeness.cib),
+        Game(name: "Myst", system: "PC", condition: Condition.fair, completeness: Completeness.cib),
+        Game(name: "Pokemon Yellow", system: "Game Boy Color", condition: Condition.good, completeness: Completeness.cib),
+        Game(name: "Pokemon Red", system: "Game Boy", condition: Condition.good, completeness: Completeness.cartrigeDiskOnly),
+        Game(name: "Dragon Warrior", system: "Nintendo Entertainment System", condition: Condition.good, completeness: Completeness.gameAndManual, notes: "Own two cartriges, one is in poor condition. It was previously a blockbuster game and was glued shut"),
+        Game(name: "Super Mario Brothers / Duck Hunt", system: "Nintendo Entertainment System", condition: Condition.good, completeness: Completeness.cartrigeDiskOnly, notes: "Was bundled with the nes, did not come with its own box.")
+    ]
+    
+    var filteredGames: [Game] = []
+    
+    mutating func filterGames(filter: Completeness){
+        self.filteredGames = self.games.filter { $0.completeness == filter }
+    }
+    
+}
+
+
 

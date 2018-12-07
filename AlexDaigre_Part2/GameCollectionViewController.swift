@@ -16,6 +16,8 @@ class GameCollectionViewController: UIViewController, GameReciverDelegate {
     @IBOutlet weak var completenessLabel: UILabel!
     @IBOutlet weak var notesLabel: UILabel!
     
+    var model: GameCollection = GameCollection();
+    
     @IBAction func browseGames(_ sender: Any) {
         print("button Pressed")
         performSegue(withIdentifier: "goToFilters", sender: self)
@@ -27,7 +29,6 @@ class GameCollectionViewController: UIViewController, GameReciverDelegate {
     }
     
     func reciveGame(game: Game){
-        print(game)
         titleLabel.text = game.name
         systemLabel.text = game.system
         conditionLabel.text = game.condition.description
@@ -40,6 +41,7 @@ class GameCollectionViewController: UIViewController, GameReciverDelegate {
         {
             let vc = segue.destination as? FiltersViewController
             vc?.delegate = self
+            vc?.model = self.model
         }
     }
 }
